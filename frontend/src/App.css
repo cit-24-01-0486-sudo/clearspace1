@@ -1,0 +1,51 @@
+/* ClearSpace — component-level overrides */
+
+.App {
+    min-height: 100vh;
+    background-color: var(--cs-bg);
+}
+
+.hero-image-frame {
+    position: relative;
+    border: 1px solid var(--cs-border);
+    background: var(--cs-surface);
+}
+.hero-image-frame::before {
+    content: "";
+    position: absolute;
+    inset: -14px -14px auto auto;
+    width: 60%;
+    height: 60%;
+    border: 1px solid rgba(74, 214, 139, 0.35);
+    z-index: -1;
+}
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(74, 214, 139, 0.35),
+        transparent
+    );
+}
+
+.feature-card {
+    background: var(--cs-surface);
+    border: 1px solid var(--cs-border);
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+.feature-card:hover {
+    background: var(--cs-surface-2);
+    border-color: rgba(74, 214, 139, 0.5);
+    transform: translateY(-2px);
+}
+
+.stat-value {
+    font-feature-settings:
+        "ss01",
+        "tnum";
+}
